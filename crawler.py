@@ -16,7 +16,7 @@ with open("config.json", "r", encoding="utf-8") as f:
 START_URLS = config["start_urls"]
 ALLOWED_DOMAINS = tuple(config["allowed_domains"])
 
-OUTPUT_FILE = "data.jsonl"
+OUTPUT_FILE = "data/data.jsonl"
 MAX_ARTICLES = 10_000
 
 MAX_QUEUE = 50_000
