@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Články</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <h1 class="brand">Články</h1>
+      <button class="btn" id="btnReload">Obnovit</button>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <div class="card__header">
+        <h2>Nový článek</h2>
+      </div>
+
+      <div class="form">
+        <label class="label" for="title">Titulek</label>
+        <input id="title" class="input" type="text" />
+
+        <label class="label" for="content">Obsah</label>
+        <textarea id="content" class="textarea"></textarea>
+
+        <div class="row">
+          <div>
+            <label class="label" for="publishedAt">Published</label>
+            <input id="publishedAt" class="input" type="datetime-local" />
+          </div>
+
+          <div>
+            <label class="label" for="finalCategory">Kategorie</label>
+            <select id="finalCategory" class="select">
+
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnPredict">Navrhnout</button>
+          <span id="predOut"></span>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--primary" id="btnSave">Uložit</button>
+          <span id="saveOut"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card__header header-row">
+        <h2>Články</h2>
+        <div class="controls">
+          <input id="q" class="input" type="search" placeholder="Hledat…" />
+          <select id="sort" class="select">
+            <option value="newest">Nejnovější</option>
+            <option value="oldest">Nejstarší</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="split__left">
+          <div id="postsList" class="list"></div>
+        </div>
+
+        <div class="split__right">
+          <div id="detail" class="detail">Vyber článek…</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.__CATEGORIES__ = null;
+  </script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
