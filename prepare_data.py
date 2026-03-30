@@ -106,6 +106,9 @@ def main() -> None:
             continue
         X[c] = pd.to_numeric(X[c], errors="coerce").fillna(0)
 
+
+    print(data.columns.tolist())
+
 # hledani min test size
     n_classes = y.nunique()
     n_samples = len(y)
